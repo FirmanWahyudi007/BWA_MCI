@@ -5,9 +5,6 @@ module.exports = {
     try {
       const categories = await Category.findAll({
         attributes: ["id", "name"],
-        where: {
-          user: req.user.id,
-        },
       });
       res.status(200).json({
         message: "Get all categories success",
