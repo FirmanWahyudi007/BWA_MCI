@@ -5,7 +5,7 @@ module.exports = {
   getAllBooks: async (req, res, next) => {
     try {
       const { keyword = "", category = "" } = req.query;
-      let condition = { " ": "" };
+      let condition = {};
       if (keyword !== "") {
         condition = { ...condition, title: { [Op.like]: `%${keyword}%` } };
       }
